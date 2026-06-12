@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy Best Friend Day Dharika ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -78,6 +79,11 @@ cursor:pointer;
 background:white;
 color:#ff1493;
 margin-top:20px;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
 }
 
 .glass{
@@ -89,6 +95,16 @@ background:rgba(255,255,255,.15);
 backdrop-filter:blur(15px);
 border-radius:25px;
 box-shadow:0 8px 30px rgba(0,0,0,.2);
+animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 15px rgba(255,255,255,.4);
+}
+to{
+box-shadow:0 0 40px rgba(255,105,180,.8);
+}
 }
 
 .section-title{
@@ -120,6 +136,17 @@ line-height:2;
 text-align:center;
 }
 
+.counter{
+font-size:3rem;
+font-weight:bold;
+margin-top:15px;
+}
+
+.tap-text{
+font-size:14px;
+opacity:.9;
+}
+
 .footer{
 text-align:center;
 padding:40px;
@@ -147,13 +174,6 @@ opacity:0;
 }
 }
 
-.tap-text{
-font-size:14px;
-margin-top:-10px;
-color:#fff;
-opacity:0.9;
-}
-
 </style>
 </head>
 <body>
@@ -162,25 +182,35 @@ opacity:0.9;
 
 <h1>❤️ Harshini & Dharika ❤️</h1>
 
-<p>
-2 Years of Friendship • Countless Memories • One Unbreakable Bond ✨
-</p>
+<p id="typing"></p>
 
 <img src="photo1.jpg" id="albumPhoto" class="friendship-photo">
 
 <p class="tap-text">
-📸 Tap the Photo to See More Memories 📸
+📸 Tap Photo To View More Memories 📸
+</p>
+
+<div class="counter" id="counter">0</div>
+
+<p>
+Beautiful Memories Together ❤️
 </p>
 
 <button class="btn" onclick="showLetter()">
 Open Friendship Letter 💌
 </button>
 
+<button class="btn" onclick="secretMsg()">
+Secret Message 💕
+</button>
+
 </section>
 
 <div class="glass">
 
-<h2 class="section-title">🌸 Friendship Quotes 🌸</h2>
+<h2 class="section-title">
+🌸 Friendship Quotes 🌸
+</h2>
 
 <div class="quotes">
 
@@ -206,27 +236,49 @@ Open Friendship Letter 💌
 
 <div class="glass">
 
-<h2 class="section-title">💌 Dear Dharika 💌</h2>
+<h2 class="section-title">
+💌 Dear Dharika 💌
+</h2>
 
 <p class="message">
 
-Happy Best Friend Day ❤️<br><br>
+Happy Best Friend Day ❤️
 
-Two years ago, I found a friend who became one of the most precious parts of my life.<br><br>
+<br><br>
 
-Every moment spent with you is valuable to me. Whether we are laughing, talking, sharing memories, or simply spending time together, those moments always become special.<br><br>
+Two years ago, I found a friend who became one of the most precious parts of my life.
 
-You have brought happiness, comfort, and countless beautiful memories into my life.<br><br>
+<br><br>
 
-No matter how many people I meet, no one could ever replace the place you hold in my heart.<br><br>
+Every moment spent with you is valuable to me.
 
-Thank you for being my best friend, my support system, and one of the greatest blessings in my life.<br><br>
+Whether we are laughing, talking, sharing memories, or simply spending time together, those moments always become special.
 
-I hope our friendship remains strong forever and that we continue creating beautiful memories together.<br><br>
+<br><br>
 
-💖 Happy Best Friend Day, Dharika 💖<br><br>
+You have brought happiness, comfort, and countless beautiful memories into my life.
 
-Forever Grateful,<br><br>
+<br><br>
+
+No matter how many people I meet, no one could ever replace the place you hold in my heart.
+
+<br><br>
+
+Thank you for being my best friend, my support system, and one of the greatest blessings in my life.
+
+<br><br>
+
+I hope our friendship remains strong forever and that we continue creating beautiful memories together.
+
+<br><br>
+
+💖 Happy Best Friend Day Dharika 💖
+
+<br><br>
+
+Forever Grateful,
+
+<br><br>
 
 ❤️ Harshini ❤️
 
@@ -236,7 +288,9 @@ Forever Grateful,<br><br>
 
 <div class="glass">
 
-<h2 class="section-title">✨ Why You're Special ✨</h2>
+<h2 class="section-title">
+✨ Why You're Special ✨
+</h2>
 
 <div class="quotes">
 
@@ -274,28 +328,40 @@ you are one of the most precious gifts life has given me."
 ❤️ Harshini & Dharika ❤️
 
 </div>
-
 <script>
 
 function showLetter(){
+
 alert(
 "💖 Dear Dharika 💖\n\nThank you for being my best friend.\nEvery moment with you is precious.\nNo one can ever replace you.\n\nHappy Best Friend Day!\n\n❤️ Harshini ❤️"
 );
+
+}
+
+function secretMsg(){
+
+alert(
+"❤️ Dharika ❤️\n\nYou are one of the most precious people in my life.\n\nThank you for always being there for me. 💖"
+);
+
 }
 
 const photos = [
+
 "photo1.jpg",
 "photo2.jpg",
 "photo3.jpg",
 "photo4.jpg",
 "photo5.jpg"
+
 ];
 
 let currentPhoto = 0;
 
-const albumPhoto = document.getElementById("albumPhoto");
+const albumPhoto =
+document.getElementById("albumPhoto");
 
-albumPhoto.addEventListener("click", () => {
+albumPhoto.addEventListener("click",()=>{
 
 currentPhoto++;
 
@@ -303,22 +369,87 @@ if(currentPhoto >= photos.length){
 currentPhoto = 0;
 }
 
-albumPhoto.src = photos[currentPhoto];
+albumPhoto.src =
+photos[currentPhoto];
 
 });
 
+setInterval(()=>{
+
+currentPhoto++;
+
+if(currentPhoto >= photos.length){
+currentPhoto = 0;
+}
+
+albumPhoto.src =
+photos[currentPhoto];
+
+},3000);
+
+let count = 0;
+
+setInterval(()=>{
+
+if(count < 100){
+
+count++;
+
+document.getElementById("counter")
+.innerHTML = count;
+
+}
+
+},40);
+
+const text =
+"2 Years of Friendship • Countless Memories • One Unbreakable Bond ✨";
+
+let i = 0;
+
+function typeText(){
+
+if(i < text.length){
+
+document.getElementById("typing")
+.innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typeText,70);
+
+}
+
+}
+
+typeText();
+
 function createHeart(){
 
-const heart=document.createElement('div');
+const heart =
+document.createElement('div');
 
 heart.className='heart';
 
-const emojis=['💖','💕','💗','💝','✨','🌸'];
+const emojis=[
+
+'💖',
+'💕',
+'💗',
+'💝',
+'✨',
+'🌸',
+'🌷',
+'🌹',
+'🌺'
+
+];
 
 heart.innerHTML=
 emojis[Math.floor(Math.random()*emojis.length)];
 
-heart.style.left=Math.random()*100+'vw';
+heart.style.left=
+Math.random()*100+'vw';
 
 heart.style.fontSize=
 (20+Math.random()*20)+'px';
@@ -326,12 +457,35 @@ heart.style.fontSize=
 document.body.appendChild(heart);
 
 setTimeout(()=>{
+
 heart.remove();
+
 },8000);
 
 }
 
 setInterval(createHeart,400);
+
+document.addEventListener("mousemove", e => {
+
+const star =
+document.createElement("div");
+
+star.innerHTML = "✨";
+
+star.style.position = "fixed";
+star.style.left = e.clientX + "px";
+star.style.top = e.clientY + "px";
+
+document.body.appendChild(star);
+
+setTimeout(()=>{
+
+star.remove();
+
+},500);
+
+});
 
 </script>
 
